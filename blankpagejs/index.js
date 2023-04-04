@@ -12,4 +12,5 @@ var iframe = doc.createElement('iframe');
 iframe.src=ifrSrc
 iframe.style.height='100%'
 iframe.style.width='100%'
+iframe.style.border='none'
 doc.body.appendChild(iframe)
