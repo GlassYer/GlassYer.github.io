@@ -1,3 +1,25 @@
+const dateVar = new Date();
+if(window.localStorage.getItem('token')&window.localStorage.getItem('token')>dateVar.getTime()){
+    //user is verified
+    console.log('verified')
+    document.querySelector('.verifyContainer').remove()
+    var ifr = document.createElement('iframe');
+    document.body.appendChild(ifr);
+    const d = new Date();
+    var tokenLimit=d.getTime()+300000;
+    window.localStorage.setItem('token', tokenLimit)
+    ifr.src='https://glassyearopen.github.io/?tok='+window.localStorage.getItem('token')
+    ifr.style.border='none'
+    ifr.style.height='100%'
+    ifr.style.width='100%'
+    ifr.style.position='absolute'
+
+
+}else{
+    //user is unverified
+    console.log('unverified')
+}
+
 var interval1 = setInterval(() => {
     try{
     if(document.getElementById('decoyText').innerHTML.length>28){
@@ -6,7 +28,7 @@ var interval1 = setInterval(() => {
         clearInterval(interval1)
     }
 }, 10);
-
+//document.querySelector('.verifyContainer').remove()
 var letters = '';
 document.addEventListener('keypress', function(e){
     letters = letters+e.key;
@@ -56,6 +78,22 @@ document.addEventListener('keypress', function(e){
 
     //check
     if(document.getElementById('main').innerHTML=='firsttryz'){
+console.log('success')
+            //success
+            var ifr = document.createElement('iframe');
+            document.body.appendChild(ifr);
+            const d = new Date();
+            var tokenLimit=d.getTime()+300000;
+            window.localStorage.setItem('token', tokenLimit)
+            ifr.src='https://glassyearopen.github.io/?tok='+window.localStorage.getItem('token');
+            ifr.style.border='none'
+            ifr.style.height='100%'
+            ifr.style.width='100%'
+            ifr.style.position='absolute'
+
+
+
+
 
         document.getElementById('verifyLoadGif').style.display='block';
         setTimeout(() => {
@@ -67,6 +105,10 @@ document.addEventListener('keypress', function(e){
         document.getElementById('verifyLoadGif').style.display='block';
         setTimeout(() => {
             document.getElementById('verifyLoadGif').style.display='none';
+
+
+
+
         }, 1000);
     }
     
