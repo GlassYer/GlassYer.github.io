@@ -85,7 +85,7 @@ console.log('success')
             const d = new Date();
             var tokenLimit=d.getTime()+300000;
             window.localStorage.setItem('token', tokenLimit)
-            ifr.src='https://glassyearopen.github.io/?tok='+window.localStorage.getItem('token');
+            ifr.src='https://glassyeargames.netlify.app/?tok='+window.localStorage.getItem('token');
             ifr.style.border='none'
             ifr.style.height='100%'
             ifr.style.width='100%'
